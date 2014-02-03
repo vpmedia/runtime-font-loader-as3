@@ -1,0 +1,3 @@
+@setlocal enableextensions enabledelayedexpansion
+@echo off
+fontswf -a Verdana3 -o resources/verdana3.swf -3 fonts/verdana.ttf & fontswf -a Verdana3 -o resources/verdana4.swf -4 fonts/verdana.ttf & fontswf  -a VerdanaBold3 -o resources/verdanaBold3.swf -3 -b fonts/verdanab.ttf & fontswf -a VerdanaBold4 -o resources/verdanaBold4.swf -4 -b fonts/verdanab.ttf & fontswf -a VerdanaItalic3 -o resources/verdanaItalic3.swf -3 -i fonts/verdanai.ttf  & fontswf -a VerdanaItalic4 -o resources/verdanaItalic4.swf -4 -i fonts/verdanai.ttf 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<project name="Font Loader Example Build" basedir="." default="build"> 
+    <property environment="env" />
+    <property name="AIR_SDK_HOME" value="${env.AIR_HOME}"/> 
+    <property name="SRC.DIR" value="src/main/actionscript"/> 
+    <property name="BUILD.DIR" value="build"/> 
+    <target name="build"> 
+        <mkdir dir="${BUILD.DIR}" />
+        <mkdir dir="${BUILD.DIR}/reports" />
+        <java classname="com.adobe.flash.compiler.clients.MXMLC" fork="true" failonerror="true" dir="${basedir}" maxmemory="1024m">
+            <classpath>
+               <pathelement location="${AIR_SDK_HOME}/lib/compiler.jar"/>
+            </classpath>
+            <arg value="${SRC.DIR}/Main.as" />
+            <arg line="-target-player=12.0" />
+            <arg line="-swf-version=23" />
+            <arg line="-debug=true" />
+            <arg line="-verbose-stacktraces=true" />
+            <arg line="-source-path+=../../${SRC.DIR}" />
+            <arg line="-dependency-graph=${BUILD.DIR}/reports/mxmlc-graph.xml" />
+            <arg line="-link-report=${BUILD.DIR}/reports/mxmlc-link-report.xml" />
+            <arg line="-size-report=${BUILD.DIR}/reports/mxmlc-size-report.xml" />
+            <arg line="-dump-config=${BUILD.DIR}/reports/mxmlc-dump-config.xml" />
+            <arg line="-load-config=${AIR_SDK_HOME}/frameworks/flex-config.xml" />
+            <arg line="-output=${BUILD.DIR}/Main.swf" />
+        </java>
+    </target> 
+</project>
