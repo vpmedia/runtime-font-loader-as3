@@ -33,7 +33,16 @@
     <!-- ########################## SETTINGS ############################### -->
     <!-- ################################################################### -->
     <property environment="env" />
-    <!-- CLEAN ALL -->    
+    <!-- BUILD -->    
     <target name="build" description="Builds the project">
+        <java classname="com.adobe.flash.compiler.clients.COMPC" fork="true" failonerror="true" dir="${basedir}" maxmemory="1024m">
+            <classpath>
+               <pathelement location="${env.AIR_HOME}/lib/compiler.jar"/>
+            </classpath>
+            <arg line="-directory=false" />
+            <arg line="-load-config=${env.AIR_HOME}/frameworks/flex-config.xml" />
+            <arg line="-include-sources+=${basedir}/src/main/actionscript" />
+            <arg line="-output=${basedir}/build/Main.swc" />
+        </java>
     </target>
 </project>
