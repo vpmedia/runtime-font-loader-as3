@@ -12,8 +12,8 @@
                <pathelement location="${AIR_SDK_HOME}/lib/compiler.jar"/>
             </classpath>
             <arg value="${SRC.DIR}/Main.as" />
-            <arg line="-target-player=15.0" />
-            <arg line="-swf-version=26" />
+            <arg line="-target-player=16.0" />
+            <arg line="-swf-version=27" />
             <arg line="-debug=true" />
             <arg line="-verbose-stacktraces=true" />
             <arg line="-source-path+=../../${SRC.DIR}" />
